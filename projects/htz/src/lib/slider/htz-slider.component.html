@@ -1,0 +1,16 @@
+<div class="htz-slider-container" [class.disabled]="disabled()" [style.--htz-slider-fill]="fillPercentage() + '%'">
+  <input
+    type="range"
+    class="htz-slider-input"
+    [min]="min()"
+    [max]="max()"
+    [step]="step()"
+    [disabled]="disabled()"
+    [value]="value()"
+    (input)="onInput($event)"
+  />
+  <div class="htz-slider-track">
+    <div class="htz-slider-fill"></div>
+  </div>
+  <div class="htz-slider-thumb" [style.left]="fillPercentage() + '%'"></div>
+</div>

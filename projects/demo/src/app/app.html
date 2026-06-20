@@ -1,0 +1,508 @@
+<htz-toast-container></htz-toast-container>
+
+<htz-topnav title="Htz Design System">
+  <ng-container htz-topnav-link>
+    <a class="htz-topnav-link htz-topnav-link--active">Components</a>
+    <a class="htz-topnav-link">Tokens</a>
+    <a class="htz-topnav-link">Guidelines</a>
+  </ng-container>
+  <ng-container htz-topnav-actions>
+    <htz-button variant="icon" size="sm">
+      <span class="material-symbols-outlined" htzButtonIcon>search</span>
+    </htz-button>
+    <htz-button variant="primary" size="sm">Download</htz-button>
+  </ng-container>
+</htz-topnav>
+
+<htz-sidenav title="Components" version="v1.0.0">
+  <htz-sidenav-item label="Overview" icon="home" [active]="true"></htz-sidenav-item>
+  <htz-sidenav-item label="Buttons" icon="smart_button"></htz-sidenav-item>
+  <htz-sidenav-item label="Inputs" icon="input"></htz-sidenav-item>
+  <htz-sidenav-item label="Data Display" icon="table_view"></htz-sidenav-item>
+  
+  <div htz-sidenav-footer>
+    <htz-button variant="ghost" size="sm" style="width: 100%; justify-content: flex-start">
+      <span class="material-symbols-outlined" htzButtonIcon>settings</span>
+      Settings
+    </htz-button>
+  </div>
+</htz-sidenav>
+
+<main class="main-content">
+  <div class="content-header">
+    <htz-breadcrumb>
+      <htz-breadcrumb-item>Design System</htz-breadcrumb-item>
+      <htz-breadcrumb-item [active]="true">Components</htz-breadcrumb-item>
+    </htz-breadcrumb>
+    
+    <h1 class="page-title">Components Overview</h1>
+    <p class="page-subtitle">A showcase of the Htz Angular component library using the Verde Sage palette and Glassmorphism.</p>
+  </div>
+
+  <htz-tabs>
+    <htz-tab label="Basic Components">
+      <htz-grid [columns]="12" gap="24px">
+        
+        <!-- Buttons -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">Buttons</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <htz-button variant="primary">Primary</htz-button>
+              <htz-button variant="secondary">Secondary</htz-button>
+              <htz-button variant="outline">Outline</htz-button>
+              <htz-button variant="ghost">Ghost</htz-button>
+              <htz-button variant="icon">
+                <span class="material-symbols-outlined" htzButtonIcon>favorite</span>
+              </htz-button>
+              <htz-button variant="primary" [disabled]="true">Disabled</htz-button>
+            </div>
+          </htz-card>
+        </div>
+
+        <!-- Badges & Avatars -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">Badges & Avatars</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+              <htz-badge variant="primary">New</htz-badge>
+              <htz-badge variant="success">Success</htz-badge>
+              <htz-badge variant="warning">Warning</htz-badge>
+              <htz-badge variant="error">Error</htz-badge>
+              
+              <div style="width: 1px; height: 24px; background: rgba(255,255,255,0.1);"></div>
+              
+              <htz-avatar initials="JD"></htz-avatar>
+              <htz-avatar initials="AL" size="sm"></htz-avatar>
+            </div>
+          </htz-card>
+        </div>
+
+      </htz-grid>
+    </htz-tab>
+
+    <htz-tab label="Forms & Inputs">
+      <htz-grid [columns]="12" gap="24px">
+        
+        <!-- Inputs -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">Text Inputs</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; flex-direction: column; gap: 16px;">
+              <htz-input label="Username" placeholder="Enter your username"></htz-input>
+              <htz-input label="Email (Error)" placeholder="name@example.com" error="Invalid email address"></htz-input>
+              <htz-select label="Role" placeholder="Select a role" [options]="selectOptions"></htz-select>
+              <htz-textarea label="Bio" placeholder="Tell us about yourself" [rows]="3"></htz-textarea>
+            </div>
+          </htz-card>
+        </div>
+
+        <!-- Toggles & Checkboxes -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">Selection Controls</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; flex-direction: column; gap: 16px;">
+              <htz-toggle label="Enable Notifications" [checked]="toggleState()" (checkedChange)="toggleState.set($event)"></htz-toggle>
+              <htz-toggle label="Dark Mode (Disabled)" [disabled]="true"></htz-toggle>
+              
+              <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 8px 0;"></div>
+              
+              <htz-checkbox label="Accept Terms" [checked]="checkboxState1()" (checkedChange)="checkboxState1.set($event)"></htz-checkbox>
+              <htz-checkbox label="Subscribe to Newsletter" [checked]="checkboxState2()" (checkedChange)="checkboxState2.set($event)"></htz-checkbox>
+            </div>
+          </htz-card>
+        </div>
+
+      </htz-grid>
+    </htz-tab>
+
+    <htz-tab label="Feedback & Data">
+      <htz-grid [columns]="12" gap="24px">
+        
+        <!-- Alerts & Toasts -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">Alerts & Notifications</h3>
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <htz-alert severity="info" title="System Update" [dismissible]="true">
+              A new software update is available. Please restart your application.
+            </htz-alert>
+            <htz-alert severity="success" title="Payment Successful">
+              Your payment has been processed successfully.
+            </htz-alert>
+            
+            <div style="display: flex; gap: 12px; margin-top: 8px;">
+              <htz-button variant="secondary" (click)="showToast()">Show Success Toast</htz-button>
+              <htz-button variant="outline" (click)="showErrorToast()">Show Error Toast</htz-button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">Data Table & Tooltips</h3>
+          <htz-table [striped]="true">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Project Alpha</td>
+                <td><htz-badge variant="success" size="sm">Active</htz-badge></td>
+                <td>
+                  <htz-button variant="icon" size="sm" htzTooltip="Edit Project" tooltipPosition="top">
+                    <span class="material-symbols-outlined" htzButtonIcon>edit</span>
+                  </htz-button>
+                </td>
+              </tr>
+              <tr>
+                <td>Project Beta</td>
+                <td><htz-badge variant="warning" size="sm">Pending</htz-badge></td>
+                <td>
+                  <htz-button variant="icon" size="sm" htzTooltip="Edit Project" tooltipPosition="top">
+                    <span class="material-symbols-outlined" htzButtonIcon>edit</span>
+                  </htz-button>
+                </td>
+              </tr>
+            </tbody>
+          </htz-table>
+          
+          <div style="margin-top: 24px; display: flex; align-items: center; gap: 16px;">
+            <span style="color: var(--htz-on-surface-variant)">Loading states:</span>
+            <htz-spinner size="sm"></htz-spinner>
+            <htz-spinner size="md"></htz-spinner>
+          </div>
+        </div>
+
+      </htz-grid>
+    </htz-tab>
+    <htz-tab label="Advanced">
+      <htz-grid [columns]="12" gap="24px">
+        
+        <!-- Dropdown -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">Dropdown Menu</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; gap: 16px;">
+              <htz-dropdown>
+                <htz-button variant="primary" htzDropdownTrigger>
+                  Options <span class="material-symbols-outlined" htzButtonIcon>expand_more</span>
+                </htz-button>
+                <div htzDropdownMenu>
+                  <button>Profile</button>
+                  <button>Settings</button>
+                  <button>Logout</button>
+                </div>
+              </htz-dropdown>
+              
+              <htz-dropdown>
+                <htz-button variant="icon" htzDropdownTrigger>
+                  <span class="material-symbols-outlined" htzButtonIcon>more_vert</span>
+                </htz-button>
+                <div htzDropdownMenu>
+                  <button>Edit</button>
+                  <button style="color: var(--htz-error)">Delete</button>
+                </div>
+              </htz-dropdown>
+            </div>
+          </htz-card>
+        </div>
+
+        <!-- Calendar -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">Date Picker / Calendar</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start;">
+              <htz-calendar 
+                [value]="calendarDate()" 
+                (valueChange)="calendarDate.set($event)">
+              </htz-calendar>
+              <p style="color: var(--htz-on-surface-variant); font-size: var(--htz-label-sm-size);">
+                Selected: {{ calendarDate() | date:'mediumDate' }}
+              </p>
+            </div>
+          </htz-card>
+        </div>
+
+      </htz-grid>
+    </htz-tab>
+    <htz-tab label="Fase 1: Formularios">
+      <htz-grid [columns]="12" gap="24px">
+        
+        <!-- Radio & Slider -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">Radio & Slider</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; flex-direction: column; gap: 24px;">
+              <div>
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Radio Buttons</p>
+                <div style="display: flex; gap: 16px;">
+                  <htz-radio name="demo-radio" value="opt1" [(selectedValue)]="radioValue">Opción 1</htz-radio>
+                  <htz-radio name="demo-radio" value="opt2" [(selectedValue)]="radioValue">Opción 2</htz-radio>
+                  <htz-radio name="demo-radio" value="opt3" [disabled]="true">Deshabilitado</htz-radio>
+                </div>
+                <p style="margin-top: 8px; font-size: var(--htz-label-sm-size); color: var(--htz-primary);">Seleccionado: {{ radioValue() }}</p>
+              </div>
+
+              <div>
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Slider / Range</p>
+                <htz-slider [(value)]="sliderValue" [min]="0" [max]="100" [step]="5"></htz-slider>
+                <p style="margin-top: 8px; font-size: var(--htz-label-sm-size); color: var(--htz-primary);">Valor: {{ sliderValue() }}</p>
+              </div>
+            </div>
+          </htz-card>
+        </div>
+
+        <!-- File Upload & Button Group -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">File Upload & Button Group</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; flex-direction: column; gap: 24px;">
+              <div>
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Drag & Drop Upload</p>
+                <htz-file-upload (fileSelected)="onFileSelected($event)"></htz-file-upload>
+                @if (selectedFileName()) {
+                  <p style="margin-top: 8px; font-size: var(--htz-label-sm-size); color: var(--htz-primary);">
+                    Archivo: {{ selectedFileName() }}
+                  </p>
+                }
+              </div>
+
+              <div>
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Button Group</p>
+                <htz-button-group>
+                  <htz-button variant="outline">Izquierda</htz-button>
+                  <htz-button variant="outline">Centro</htz-button>
+                  <htz-button variant="outline">Derecha</htz-button>
+                </htz-button-group>
+              </div>
+            </div>
+          </htz-card>
+        </div>
+
+      </htz-grid>
+    </htz-tab>
+    <htz-tab label="Fase 2: Layout & Nav">
+      <htz-grid [columns]="12" gap="24px">
+        
+        <!-- Accordion & Divider -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">Accordion & Divider</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; flex-direction: column; gap: 16px;">
+              <htz-accordion>
+                <htz-expansion-panel title="Sección 1">
+                  <p>Contenido de la primera sección. Puedes poner cualquier cosa aquí dentro.</p>
+                </htz-expansion-panel>
+                <htz-expansion-panel title="Sección 2">
+                  <p>Contenido de la segunda sección con más detalles.</p>
+                </htz-expansion-panel>
+              </htz-accordion>
+
+              <htz-divider></htz-divider>
+
+              <div style="display: flex; align-items: center; justify-content: center; gap: 16px; height: 50px;">
+                <span>Izquierda</span>
+                <htz-divider [vertical]="true"></htz-divider>
+                <span>Derecha</span>
+              </div>
+            </div>
+          </htz-card>
+        </div>
+
+        <!-- Pagination & Stepper -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">Pagination & Stepper</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; flex-direction: column; gap: 24px;">
+              
+              <div>
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Paginación</p>
+                <htz-pagination [totalItems]="100" [pageSize]="10" [(currentPage)]="currentPage"></htz-pagination>
+                <p style="margin-top: 8px; font-size: var(--htz-label-sm-size); color: var(--htz-primary);">Página actual: {{ currentPage() }}</p>
+              </div>
+
+              <div>
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Stepper</p>
+                <htz-stepper [(selectedIndex)]="currentStep">
+                  <htz-step label="Paso 1">
+                    <p style="padding: 16px;">Introduce tus datos personales.</p>
+                  </htz-step>
+                  <htz-step label="Paso 2">
+                    <p style="padding: 16px;">Configura tu cuenta.</p>
+                  </htz-step>
+                  <htz-step label="Paso 3">
+                    <p style="padding: 16px;">¡Todo listo para empezar!</p>
+                  </htz-step>
+                </htz-stepper>
+              </div>
+
+            </div>
+          </htz-card>
+        </div>
+
+      </htz-grid>
+    </htz-tab>
+    <htz-tab label="Fase 3: Data & Feedback">
+      <htz-grid [columns]="12" gap="24px">
+        
+        <!-- List & Tree -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">List & Tree</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; flex-direction: column; gap: 24px;">
+              <div>
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Lista</p>
+                <htz-list>
+                  <htz-list-item title="Notificación importante" description="Revisa tus ajustes de seguridad" icon="warning"></htz-list-item>
+                  <htz-list-item title="Mensaje nuevo" description="Tienes 3 mensajes sin leer" icon="mail"></htz-list-item>
+                  <htz-list-item title="Actualización" description="Versión 2.0 disponible" icon="update"></htz-list-item>
+                </htz-list>
+              </div>
+
+              <div>
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Tree (Jerárquico)</p>
+                <htz-tree [nodes]="treeData"></htz-tree>
+              </div>
+            </div>
+          </htz-card>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">Progress Bar</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; flex-direction: column; gap: 24px;">
+              <div>
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Variantes</p>
+                
+                <p style="font-size: var(--htz-label-sm-size); color: var(--htz-on-surface-variant); margin-bottom: 4px;">Primary (75%)</p>
+                <htz-progress-bar [value]="75" variant="primary" [showLabel]="true"></htz-progress-bar>
+                
+                <p style="font-size: var(--htz-label-sm-size); color: var(--htz-on-surface-variant); margin-top: 16px; margin-bottom: 4px;">Success (100%)</p>
+                <htz-progress-bar [value]="100" variant="success" [showLabel]="true"></htz-progress-bar>
+
+                <p style="font-size: var(--htz-label-sm-size); color: var(--htz-on-surface-variant); margin-top: 16px; margin-bottom: 4px;">Warning (40%)</p>
+                <htz-progress-bar [value]="40" variant="warning" [showLabel]="true"></htz-progress-bar>
+
+                <p style="font-size: var(--htz-label-sm-size); color: var(--htz-on-surface-variant); margin-top: 16px; margin-bottom: 4px;">Error (15%)</p>
+                <htz-progress-bar [value]="15" variant="error" [showLabel]="true"></htz-progress-bar>
+              </div>
+            </div>
+          </htz-card>
+        </div>
+
+      </htz-grid>
+    </htz-tab>
+    <htz-tab label="Fase 4: Overlays & Feedback">
+      <htz-grid [columns]="12" gap="24px">
+        
+        <!-- Modal & Drawer -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">Modal & Drawer</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; flex-direction: column; gap: 24px;">
+              <div>
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Modal / Dialog</p>
+                <htz-button (click)="isModalOpen.set(true)">Abrir Modal</htz-button>
+                <htz-modal [(isOpen)]="isModalOpen" title="Confirmación de borrado">
+                  <p style="margin-bottom: 16px; color: var(--htz-on-surface-variant);">
+                    ¿Estás seguro de que quieres eliminar este archivo? Esta acción no se puede deshacer.
+                  </p>
+                  <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                    <htz-button variant="ghost" (click)="isModalOpen.set(false)">Cancelar</htz-button>
+                    <htz-button variant="primary" (click)="isModalOpen.set(false)">Eliminar</htz-button>
+                  </div>
+                </htz-modal>
+              </div>
+
+              <div>
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Drawer / Sidebar</p>
+                <htz-button variant="secondary" (click)="isDrawerOpen.set(true)">Abrir Drawer</htz-button>
+                <htz-drawer [(isOpen)]="isDrawerOpen" position="right">
+                  <div style="padding: 24px;">
+                    <h3 style="margin-bottom: 16px; color: var(--htz-on-surface);">Ajustes de Perfil</h3>
+                    <p style="color: var(--htz-on-surface-variant);">Configura tus preferencias aquí.</p>
+                  </div>
+                </htz-drawer>
+              </div>
+            </div>
+          </htz-card>
+        </div>
+
+        <!-- Skeleton & Chips -->
+        <div class="demo-section" style="grid-column: span 6">
+          <h3 class="section-title">Skeleton & Chips</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; flex-direction: column; gap: 24px;">
+              <div>
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Skeleton Loader</p>
+                <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 16px;">
+                  <htz-skeleton shape="circle" width="48px" height="48px"></htz-skeleton>
+                  <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
+                    <htz-skeleton shape="text" width="60%" height="16px"></htz-skeleton>
+                    <htz-skeleton shape="text" width="40%" height="16px"></htz-skeleton>
+                  </div>
+                </div>
+                <htz-skeleton shape="rect" width="100%" height="120px"></htz-skeleton>
+              </div>
+
+              <div>
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Chips / Tags</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                  <htz-chip label="Filtro Activo"></htz-chip>
+                  <htz-chip label="Bug" variant="error"></htz-chip>
+                  <htz-chip label="Feature" variant="success"></htz-chip>
+                  <htz-chip label="Eliminable" [removable]="true"></htz-chip>
+                </div>
+              </div>
+            </div>
+          </htz-card>
+        </div>
+
+      </htz-grid>
+    </htz-tab>
+    <htz-tab label="Fase 5: Date & Time Pickers">
+      <htz-grid [columns]="12" gap="24px">
+        
+        <!-- Pickers -->
+        <div class="demo-section" style="grid-column: span 12">
+          <h3 class="section-title">Date & Time Pickers</h3>
+          <htz-card [hoverable]="false">
+            <div htz-card-body style="display: flex; gap: 48px; flex-wrap: wrap;">
+              
+              <div style="flex: 1; min-width: 250px;">
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Date Picker</p>
+                <htz-date-picker [(date)]="selectedDate"></htz-date-picker>
+                <p style="margin-top: 12px; font-size: 14px; color: var(--htz-primary);">
+                  Seleccionado: {{ selectedDate() | date:'mediumDate' }}
+                </p>
+              </div>
+
+              <div style="flex: 1; min-width: 250px;">
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">Time Picker</p>
+                <htz-time-picker [(time)]="selectedTime"></htz-time-picker>
+                <p style="margin-top: 12px; font-size: 14px; color: var(--htz-primary);">
+                  Seleccionado: {{ selectedTime() }}
+                </p>
+              </div>
+
+              <div style="flex: 1; min-width: 250px;">
+                <p style="margin-bottom: 12px; color: var(--htz-on-surface);">DateTime Picker</p>
+                <htz-datetime-picker [(datetime)]="selectedDatetime"></htz-datetime-picker>
+                <p style="margin-top: 12px; font-size: 14px; color: var(--htz-primary);">
+                  Seleccionado: {{ selectedDatetime() | date:'medium' }}
+                </p>
+              </div>
+
+            </div>
+          </htz-card>
+        </div>
+
+      </htz-grid>
+    </htz-tab>
+  </htz-tabs>
+</main>

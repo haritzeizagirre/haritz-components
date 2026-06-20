@@ -1,0 +1,13 @@
+<label class="htz-toggle" [class.htz-toggle--checked]="checked()" [class.htz-toggle--disabled]="disabled()">
+  <button
+    role="switch"
+    class="htz-toggle__track"
+    [attr.aria-checked]="checked()"
+    [disabled]="disabled()"
+    (click)="toggle()">
+    <span class="htz-toggle__thumb"></span>
+  </button>
+  @if (label()) {
+    <span class="htz-toggle__label">{{ label() }}</span>
+  }
+</label>

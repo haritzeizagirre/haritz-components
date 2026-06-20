@@ -1,0 +1,48 @@
+:host {
+  display: block;
+}
+
+.htz-file-upload-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--htz-space-xl, 2rem);
+  border: 2px dashed var(--htz-primary);
+  border-radius: var(--htz-radius-xl);
+  background: transparent;
+  color: var(--htz-primary);
+  cursor: pointer;
+  transition: all 200ms ease;
+  min-height: 150px;
+
+  &:hover {
+    background-color: rgba(45, 90, 59, 0.05); // Very subtle primary background
+    border-color: var(--htz-primary);
+    transform: translateY(-2px);
+  }
+
+  &.drag-over {
+    background-color: rgba(45, 90, 59, 0.1);
+    border-color: var(--htz-primary);
+    transform: scale(1.02);
+  }
+}
+
+.upload-icon {
+  font-size: 48px;
+  color: var(--htz-primary);
+  margin-bottom: var(--htz-space-md);
+}
+
+.upload-text {
+  margin: 0;
+  font-family: var(--htz-font-body);
+  font-size: var(--htz-body-md-size);
+  font-weight: 600;
+  color: var(--htz-primary);
+}
+
+.hidden-input {
+  display: none;
+}

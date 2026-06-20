@@ -1,0 +1,58 @@
+:host {
+  display: block;
+  font-family: var(--htz-font-family, inherit);
+  color: var(--htz-text-color, inherit);
+}
+
+.htz-tree {
+  /* Tree container styles */
+}
+
+.htz-tree-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.htz-tree-node {
+  margin: var(--htz-tree-node-margin, 2px 0);
+}
+
+.htz-tree-node-content {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: var(--htz-tree-node-padding, 6px 8px);
+  border-radius: var(--htz-tree-node-radius, 6px);
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--htz-tree-hover-bg, rgba(0, 0, 0, 0.05));
+  }
+}
+
+.htz-tree-icon {
+  font-size: var(--htz-tree-icon-size, 20px);
+  margin-right: var(--htz-tree-icon-margin-right, 8px);
+  color: var(--htz-tree-icon-color, #666);
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.htz-tree-icon-placeholder {
+  width: var(--htz-tree-icon-size, 20px);
+  margin-right: var(--htz-tree-icon-margin-right, 8px);
+  display: inline-block;
+}
+
+.htz-tree-label {
+  user-select: none;
+  font-size: var(--htz-tree-font-size, 14px);
+  font-weight: var(--htz-tree-font-weight, 500);
+}
+
+.htz-tree-children {
+  padding-left: var(--htz-tree-indent, 24px);
+}

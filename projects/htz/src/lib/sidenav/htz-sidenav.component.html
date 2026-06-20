@@ -1,0 +1,14 @@
+<div class="htz-sidenav__header">
+  @if (title()) {
+    <h2 class="htz-sidenav__title">{{ title() }}</h2>
+  }
+  @if (version()) {
+    <span class="htz-sidenav__version">{{ version() }}</span>
+  }
+</div>
+<div class="htz-sidenav__content">
+  <ng-content></ng-content>
+</div>
+<div class="htz-sidenav__footer">
+  <ng-content select="[htz-sidenav-footer]"></ng-content>
+</div>

@@ -1,0 +1,37 @@
+:host {
+  display: block;
+}
+
+.htz-sidenav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: var(--htz-radius-xl);
+  color: var(--htz-on-surface-variant);
+  text-decoration: none;
+  cursor: pointer;
+  font-family: var(--htz-font-body);
+  font-size: var(--htz-label-md-size);
+  font-weight: var(--htz-label-md-weight);
+  transition: all 200ms ease;
+
+  &:hover {
+    background-color: var(--htz-surface-container-high);
+    transform: translateX(4px);
+  }
+}
+
+.htz-sidenav-item--active {
+  background: rgba(45, 90, 59, 0.3);
+  color: var(--htz-on-primary-container);
+  font-weight: 700;
+
+  &:hover {
+    transform: none;
+  }
+}
+
+.htz-sidenav-item__icon {
+  font-size: 20px;
+}

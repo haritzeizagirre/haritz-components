@@ -1,0 +1,105 @@
+.htz-stepper-container {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--htz-font-family, inherit);
+}
+
+.htz-stepper-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.htz-step-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.htz-step-header-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+  color: var(--htz-text-color-muted, #666);
+  transition: color 0.2s;
+  outline: none;
+
+  &:hover {
+    color: var(--htz-primary, #1976d2);
+  }
+
+  &:focus-visible .htz-step-indicator {
+    box-shadow: 0 0 0 3px var(--htz-primary-alpha, rgba(25, 118, 210, 0.3));
+  }
+
+  &.htz-active {
+    color: var(--htz-primary, #1976d2);
+    
+    .htz-step-indicator {
+      background-color: var(--htz-primary, #1976d2);
+      color: var(--htz-on-primary, #ffffff);
+      border-color: var(--htz-primary, #1976d2);
+    }
+    
+    .htz-step-label {
+      font-weight: 600;
+    }
+  }
+
+  &.htz-completed {
+    color: var(--htz-success, #2e7d32);
+    
+    .htz-step-indicator {
+      background-color: var(--htz-success, #2e7d32);
+      color: var(--htz-on-success, #ffffff);
+      border-color: var(--htz-success, #2e7d32);
+    }
+  }
+}
+
+.htz-step-indicator {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid var(--htz-border-color, #ccc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background-color: var(--htz-bg-color, #ffffff);
+  transition: all 0.2s;
+  
+  .material-icons {
+    font-size: 1.125rem;
+  }
+}
+
+.htz-step-label {
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.htz-step-separator {
+  flex: 1;
+  height: 2px;
+  background-color: var(--htz-border-color, #ccc);
+  margin: 1rem 0.5rem 0;
+  min-width: 2rem;
+  transition: background-color 0.2s;
+
+  &.htz-completed {
+    background-color: var(--htz-success, #2e7d32);
+  }
+}
+
+.htz-stepper-content {
+  padding: 1.5rem;
+  border: 1px solid var(--htz-border-color, #e0e0e0);
+  border-radius: var(--htz-border-radius, 4px);
+  background-color: var(--htz-bg-color, #ffffff);
+}

@@ -1,0 +1,13 @@
+<div class="htz-progress-container">
+  @if (showLabel()) {
+    <div class="htz-progress-label">
+      <span>{{ clampedValue() }}%</span>
+    </div>
+  }
+  <div class="htz-progress-track">
+    <div 
+      class="htz-progress-fill htz-variant-{{ variant() }}"
+      [style.width.%]="clampedValue()">
+    </div>
+  </div>
+</div>

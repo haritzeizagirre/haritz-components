@@ -1,0 +1,7 @@
+<div class="htz-avatar" [class]="'htz-avatar--' + size()">
+  @if (showImage()) {
+    <img [src]="src()" [alt]="alt()" class="htz-avatar__img" />
+  } @else {
+    <span class="htz-avatar__initials">{{ displayInitials() }}</span>
+  }
+</div>

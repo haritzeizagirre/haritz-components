@@ -1,0 +1,64 @@
+// =============================================================================
+// Htz Theme — Entry point
+// =============================================================================
+// Consumers import this single file to get the full design system:
+//   @import 'htz/styles/htz-theme';
+
+@import 'tokens';
+@import 'typography';
+@import 'elevation';
+
+// ---------------------------------------------------------------------------
+// Base Reset
+// ---------------------------------------------------------------------------
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// ---------------------------------------------------------------------------
+// Base Body Styles
+// ---------------------------------------------------------------------------
+body.htz-theme {
+  background-color: var(--htz-background);
+  color: var(--htz-on-surface);
+  font-family: var(--htz-font-body);
+  font-size: var(--htz-body-md-size);
+  font-weight: var(--htz-body-md-weight);
+  line-height: var(--htz-body-md-line-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+// ---------------------------------------------------------------------------
+// Selection
+// ---------------------------------------------------------------------------
+::selection {
+  background-color: var(--htz-primary-container);
+  color: var(--htz-on-primary-container);
+}
+
+// ---------------------------------------------------------------------------
+// Scrollbar (Webkit)
+// ---------------------------------------------------------------------------
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--htz-surface-container-low);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--htz-outline-variant);
+  border-radius: var(--htz-radius-full);
+
+  &:hover {
+    background: var(--htz-outline);
+  }
+}

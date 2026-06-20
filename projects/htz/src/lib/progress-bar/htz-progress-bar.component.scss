@@ -1,0 +1,50 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.htz-progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--htz-spacing-xs, 0.25rem);
+  width: 100%;
+}
+
+.htz-progress-label {
+  display: flex;
+  justify-content: flex-end;
+  font-size: var(--htz-font-size-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--htz-text-primary, #e0e0e0);
+}
+
+.htz-progress-track {
+  width: 100%;
+  height: var(--htz-progress-height, 8px);
+  background-color: var(--htz-progress-track-bg, rgba(255, 255, 255, 0.1));
+  border-radius: var(--htz-border-radius-pill, 9999px);
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.htz-progress-fill {
+  height: 100%;
+  border-radius: var(--htz-border-radius-pill, 9999px);
+  transition: width 0.3s ease-in-out;
+
+  &.htz-variant-primary {
+    background-color: var(--htz-primary, #007bff);
+  }
+
+  &.htz-variant-success {
+    background-color: var(--htz-success, #28a745);
+  }
+
+  &.htz-variant-warning {
+    background-color: var(--htz-warning, #ffc107);
+  }
+
+  &.htz-variant-error {
+    background-color: var(--htz-error, #dc3545);
+  }
+}

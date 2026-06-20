@@ -1,0 +1,6 @@
+<span class="htz-chip-label">{{ label() }}</span>
+@if (removable()) {
+  <button class="htz-chip-remove" (click)="onRemove($event)" aria-label="Remove">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+}

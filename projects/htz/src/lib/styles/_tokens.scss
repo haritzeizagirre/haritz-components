@@ -1,0 +1,168 @@
+// =============================================================================
+// Htz Design Tokens — Verde Sage Dark Mode
+// =============================================================================
+// All visual properties defined as CSS custom properties for easy theming.
+// Consumers can override any token by redefining the variable.
+
+:root {
+  // ---------------------------------------------------------------------------
+  // Colors — Primary
+  // ---------------------------------------------------------------------------
+  --htz-primary: #4a7c59;
+  --htz-on-primary: #ffffff;
+  --htz-primary-container: #2d5a3b;
+  --htz-on-primary-container: #c2e5cc;
+  --htz-inverse-primary: #a2cfae;
+
+  // ---------------------------------------------------------------------------
+  // Colors — Secondary
+  // ---------------------------------------------------------------------------
+  --htz-secondary: #4b6352;
+  --htz-on-secondary: #ffffff;
+  --htz-secondary-container: #cce8d3;
+  --htz-on-secondary-container: #072012;
+
+  // ---------------------------------------------------------------------------
+  // Colors — Tertiary
+  // ---------------------------------------------------------------------------
+  --htz-tertiary: #3d6470;
+  --htz-on-tertiary: #ffffff;
+  --htz-tertiary-container: #c0e9fa;
+  --htz-on-tertiary-container: #001f28;
+
+  // ---------------------------------------------------------------------------
+  // Colors — Error
+  // ---------------------------------------------------------------------------
+  --htz-error: #ffb4ab;
+  --htz-on-error: #690005;
+  --htz-error-container: #93000a;
+  --htz-on-error-container: #ffdad6;
+
+  // ---------------------------------------------------------------------------
+  // Colors — Surfaces
+  // ---------------------------------------------------------------------------
+  --htz-background: #1a1a1a;
+  --htz-on-background: #e5e5e5;
+  --htz-surface: #2f2f2f;
+  --htz-on-surface: #f3f4f6;
+  --htz-surface-variant: #3f3f3f;
+  --htz-on-surface-variant: #a3a3a3;
+  --htz-surface-container-lowest: #0f0f0f;
+  --htz-surface-container-low: #1a1a1a;
+  --htz-surface-container: #262626;
+  --htz-surface-container-high: #333333;
+  --htz-surface-container-highest: #404040;
+  --htz-surface-bright: #3f3f3f;
+  --htz-surface-dim: #1a1a1a;
+  --htz-surface-tint: #4a7c59;
+
+  // ---------------------------------------------------------------------------
+  // Colors — Outline & Inverse
+  // ---------------------------------------------------------------------------
+  --htz-outline: #737373;
+  --htz-outline-variant: #525252;
+  --htz-inverse-surface: #e5e5e5;
+  --htz-inverse-on-surface: #2f2f2f;
+
+  // ---------------------------------------------------------------------------
+  // Colors — Semantic
+  // ---------------------------------------------------------------------------
+  --htz-success: #4a7c59;
+  --htz-on-success: #ffffff;
+  --htz-warning: #e5a93d;
+  --htz-on-warning: #1a1a1a;
+  --htz-info: #3d6470;
+  --htz-on-info: #ffffff;
+
+  // ---------------------------------------------------------------------------
+  // Gradients
+  // ---------------------------------------------------------------------------
+  --htz-gradient-primary: linear-gradient(135deg, #689f78 0%, #4a7c59 100%);
+
+  // ---------------------------------------------------------------------------
+  // Typography — Font Families
+  // ---------------------------------------------------------------------------
+  --htz-font-headline: 'Plus Jakarta Sans', sans-serif;
+  --htz-font-body: 'Inter', sans-serif;
+
+  // ---------------------------------------------------------------------------
+  // Typography — Display
+  // ---------------------------------------------------------------------------
+  --htz-display-lg-size: 48px;
+  --htz-display-lg-weight: 800;
+  --htz-display-lg-line-height: 1.1;
+  --htz-display-lg-letter-spacing: -0.02em;
+
+  // ---------------------------------------------------------------------------
+  // Typography — Headlines
+  // ---------------------------------------------------------------------------
+  --htz-headline-lg-size: 32px;
+  --htz-headline-lg-weight: 700;
+  --htz-headline-lg-line-height: 1.2;
+  --htz-headline-lg-letter-spacing: -0.01em;
+
+  --htz-headline-md-size: 24px;
+  --htz-headline-md-weight: 600;
+  --htz-headline-md-line-height: 1.3;
+
+  // ---------------------------------------------------------------------------
+  // Typography — Body
+  // ---------------------------------------------------------------------------
+  --htz-body-lg-size: 18px;
+  --htz-body-lg-weight: 400;
+  --htz-body-lg-line-height: 1.6;
+
+  --htz-body-md-size: 16px;
+  --htz-body-md-weight: 400;
+  --htz-body-md-line-height: 1.5;
+
+  // ---------------------------------------------------------------------------
+  // Typography — Labels
+  // ---------------------------------------------------------------------------
+  --htz-label-md-size: 14px;
+  --htz-label-md-weight: 600;
+  --htz-label-md-line-height: 1.4;
+  --htz-label-md-letter-spacing: 0.01em;
+
+  --htz-label-sm-size: 12px;
+  --htz-label-sm-weight: 500;
+  --htz-label-sm-line-height: 1.2;
+
+  // ---------------------------------------------------------------------------
+  // Spacing
+  // ---------------------------------------------------------------------------
+  --htz-space-xs: 4px;
+  --htz-space-sm: 8px;
+  --htz-space-md: 16px;
+  --htz-space-lg: 24px;
+  --htz-space-xl: 40px;
+  --htz-space-2xl: 64px;
+  --htz-space-gutter: 24px;
+  --htz-space-margin: 32px;
+
+  // ---------------------------------------------------------------------------
+  // Border Radius
+  // ---------------------------------------------------------------------------
+  --htz-radius-sm: 0.25rem;
+  --htz-radius-default: 0.5rem;
+  --htz-radius-md: 0.75rem;
+  --htz-radius-lg: 1rem;
+  --htz-radius-xl: 1.5rem;
+  --htz-radius-full: 9999px;
+
+  // ---------------------------------------------------------------------------
+  // Transitions
+  // ---------------------------------------------------------------------------
+  --htz-transition-fast: 150ms ease;
+  --htz-transition-normal: 200ms ease;
+  --htz-transition-slow: 300ms ease;
+
+  // ---------------------------------------------------------------------------
+  // Elevation — Glassmorphism
+  // ---------------------------------------------------------------------------
+  --htz-glass-bg: rgba(47, 47, 47, 0.7);
+  --htz-glass-blur: 12px;
+  --htz-glass-border: 1.5px solid rgba(255, 255, 255, 0.08);
+  --htz-glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  --htz-glow-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}

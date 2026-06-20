@@ -1,0 +1,90 @@
+<div class="htz-datetime-picker-wrapper">
+  <div class="htz-input-container" (click)="toggleOpen()">
+    <input 
+      type="text" 
+      class="htz-input" 
+      [value]="formattedDateTime()"
+      readonly
+      placeholder="Select date and time"
+    >
+    <span class="material-symbols-outlined htz-calendar-icon">calendar_month</span>
+  </div>
+
+  @if (isOpen()) {
+    <div class="htz-datetime-dropdown" (click)="$event.stopPropagation()">
+      <div class="htz-datetime-layout">
+        
+        <!-- Calendar Section -->
+        <div class="htz-calendar">
+          <div class="htz-calendar-header">
+            <button class="htz-nav-btn" (click)="prevMonth()" type="button">
+              <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <span class="htz-current-month">{{ currentMonthName }}</span>
+            <button class="htz-nav-btn" (click)="nextMonth()" type="button">
+              <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+          </div>
+          
+          <div class="htz-calendar-body">
+            <div class="htz-weekdays">
+              @for (day of weekDays; track day) {
+                <div class="htz-weekday">{{ day }}</div>
+              }
+            </div>
+            
+            <div class="htz-days-grid">
+              @for (day of calendarDays(); track day.date.toISOString()) {
+                <button 
+                  type="button"
+                  class="htz-day"
+                  [class.htz-other-month]="!day.isCurrentMonth"
+                  [class.htz-selected]="isSelectedDate(day.date)"
+                  (click)="selectDate(day)"
+                >
+                  {{ day.day }}
+                </button>
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="htz-divider"></div>
+
+        <!-- Time Section -->
+        <div class="htz-time-picker">
+          <div class="htz-time-column">
+            <div class="htz-time-header">HH</div>
+            <div class="htz-time-list">
+              @for (hour of hours; track hour) {
+                <div 
+                  class="htz-time-item" 
+                  [class.htz-selected]="selectedHour() === hour && datetime()"
+                  (click)="selectHour(hour)"
+                >
+                  {{ hour < 10 ? '0' + hour : hour }}
+                </div>
+              }
+            </div>
+          </div>
+          <div class="htz-time-separator">:</div>
+          <div class="htz-time-column">
+            <div class="htz-time-header">MM</div>
+            <div class="htz-time-list">
+              @for (min of minutes; track min) {
+                <div 
+                  class="htz-time-item" 
+                  [class.htz-selected]="selectedMinute() === min && datetime()"
+                  (click)="selectMinute(min)"
+                >
+                  {{ min < 10 ? '0' + min : min }}
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  }
+</div>

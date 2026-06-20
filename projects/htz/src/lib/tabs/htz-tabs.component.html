@@ -1,0 +1,16 @@
+<div class="htz-tabs__header">
+  @for (tab of tabs(); track $index) {
+    <button
+      class="htz-tabs__trigger"
+      [class.htz-tabs__trigger--active]="activeIndex() === $index"
+      (click)="selectTab($index)">
+      {{ tab.label() }}
+      @if (activeIndex() === $index) {
+        <div class="htz-tabs__indicator"></div>
+      }
+    </button>
+  }
+</div>
+<div class="htz-tabs__panel">
+  <ng-content></ng-content>
+</div>

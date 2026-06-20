@@ -1,0 +1,37 @@
+<div class="htz-time-picker-container">
+  <input 
+    type="text" 
+    class="htz-time-picker-input"
+    [value]="time() || ''"
+    (focus)="openDropdown()"
+    (click)="openDropdown()"
+    readonly
+    placeholder="HH:mm"
+  />
+
+  @if (isOpen()) {
+    <div class="htz-time-picker-dropdown">
+      <div class="htz-time-picker-column">
+        @for (hour of hours; track hour) {
+          <div 
+            class="htz-time-picker-item" 
+            [class.selected]="hour === selectedHour()"
+            (click)="selectHour(hour)">
+            {{ hour }}
+          </div>
+        }
+      </div>
+      <div class="htz-time-picker-separator">:</div>
+      <div class="htz-time-picker-column">
+        @for (minute of minutes; track minute) {
+          <div 
+            class="htz-time-picker-item" 
+            [class.selected]="minute === selectedMinute()"
+            (click)="selectMinute(minute)">
+            {{ minute }}
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>

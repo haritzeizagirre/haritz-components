@@ -1,0 +1,11 @@
+<div class="htz-drawer-backdrop" [class.htz-drawer-backdrop-open]="isOpen()" (click)="close()"></div>
+
+<div 
+  class="htz-drawer-panel" 
+  [style.--htz-drawer-width]="width()"
+  [class.htz-drawer-open]="isOpen()"
+  [class]="'htz-drawer-position-' + position()">
+  <div class="htz-drawer-content">
+    <ng-content></ng-content>
+  </div>
+</div>

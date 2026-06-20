@@ -1,0 +1,27 @@
+<div class="htz-select" [class.htz-select--focused]="focused() || isOpen()" [class.htz-select--error]="error()" [class.htz-select--disabled]="disabled()">
+  @if (label()) {
+    <label class="htz-select__label">{{ label() }}</label>
+  }
+  <div class="htz-select__wrapper" (click)="toggleDropdown()">
+    <div class="htz-select__field" [class.htz-select__field--placeholder]="!value()">
+      {{ selectedLabel() || placeholder() }}
+    </div>
+    <span class="material-symbols-outlined htz-select__icon" [class.htz-select__icon--open]="isOpen()">expand_more</span>
+    
+    @if (isOpen()) {
+      <div class="htz-select__dropdown" (click)="$event.stopPropagation()">
+        @for (option of options(); track option.value) {
+          <div 
+            class="htz-select__option" 
+            [class.htz-select__option--selected]="value() === option.value"
+            (click)="selectOption(option, $event)">
+            {{ option.label }}
+          </div>
+        }
+      </div>
+    }
+  </div>
+  @if (error()) {
+    <span class="htz-select__error">{{ error() }}</span>
+  }
+</div>

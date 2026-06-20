@@ -1,0 +1,55 @@
+// =============================================================================
+// Htz Typography — Utility classes
+// =============================================================================
+
+.htz-display-lg {
+  font-family: var(--htz-font-headline);
+  font-size: var(--htz-display-lg-size);
+  font-weight: var(--htz-display-lg-weight);
+  line-height: var(--htz-display-lg-line-height);
+  letter-spacing: var(--htz-display-lg-letter-spacing);
+}
+
+.htz-headline-lg {
+  font-family: var(--htz-font-headline);
+  font-size: var(--htz-headline-lg-size);
+  font-weight: var(--htz-headline-lg-weight);
+  line-height: var(--htz-headline-lg-line-height);
+  letter-spacing: var(--htz-headline-lg-letter-spacing);
+}
+
+.htz-headline-md {
+  font-family: var(--htz-font-headline);
+  font-size: var(--htz-headline-md-size);
+  font-weight: var(--htz-headline-md-weight);
+  line-height: var(--htz-headline-md-line-height);
+}
+
+.htz-body-lg {
+  font-family: var(--htz-font-body);
+  font-size: var(--htz-body-lg-size);
+  font-weight: var(--htz-body-lg-weight);
+  line-height: var(--htz-body-lg-line-height);
+}
+
+.htz-body-md {
+  font-family: var(--htz-font-body);
+  font-size: var(--htz-body-md-size);
+  font-weight: var(--htz-body-md-weight);
+  line-height: var(--htz-body-md-line-height);
+}
+
+.htz-label-md {
+  font-family: var(--htz-font-body);
+  font-size: var(--htz-label-md-size);
+  font-weight: var(--htz-label-md-weight);
+  line-height: var(--htz-label-md-line-height);
+  letter-spacing: var(--htz-label-md-letter-spacing);
+}
+
+.htz-label-sm {
+  font-family: var(--htz-font-body);
+  font-size: var(--htz-label-sm-size);
+  font-weight: var(--htz-label-sm-weight);
+  line-height: var(--htz-label-sm-line-height);
+}

@@ -1,0 +1,41 @@
+// =============================================================================
+// Htz Elevation — Glassmorphism utilities
+// =============================================================================
+
+.htz-glass-panel {
+  background: var(--htz-glass-bg);
+  backdrop-filter: blur(var(--htz-glass-blur));
+  -webkit-backdrop-filter: blur(var(--htz-glass-blur));
+  border: var(--htz-glass-border);
+  box-shadow: var(--htz-glass-shadow);
+}
+
+.htz-glow-shadow {
+  box-shadow: var(--htz-glow-shadow);
+}
+
+.htz-text-gradient {
+  background: var(--htz-gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Elevation levels
+.htz-elevation-0 {
+  background-color: var(--htz-background);
+}
+
+.htz-elevation-1 {
+  @extend .htz-glass-panel;
+}
+
+.htz-elevation-2 {
+  @extend .htz-glass-panel;
+  &:hover {
+    box-shadow: var(--htz-glow-shadow);
+    transform: translateY(-2px);
+  }
+  transition: box-shadow var(--htz-transition-slow),
+              transform var(--htz-transition-slow);
+}

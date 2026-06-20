@@ -1,0 +1,86 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  background: var(--htz-glass-bg);
+  backdrop-filter: blur(var(--htz-glass-blur));
+  -webkit-backdrop-filter: blur(var(--htz-glass-blur));
+  border: var(--htz-glass-border);
+  border-radius: var(--htz-radius-xl);
+  background-color: var(--htz-surface-container);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+:host(.htz-card--hoverable):hover {
+  transform: translateY(-4px);
+}
+
+:host(.htz-card--elevated) {
+  box-shadow: var(--htz-glow-shadow);
+}
+
+.htz-card__media {
+  height: 192px;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--htz-surface-container-high);
+  border-top-left-radius: calc(var(--htz-radius-xl) - 1px);
+  border-top-right-radius: calc(var(--htz-radius-xl) - 1px);
+
+  ::ng-deep {
+    img, video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+      mix-blend-mode: luminosity;
+    }
+  }
+}
+
+.htz-card__body {
+  padding: var(--htz-space-md);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+// Projected content styles
+:host ::ng-deep {
+  .htz-card-title {
+    font-family: var(--htz-font-headline);
+    font-size: var(--htz-headline-md-size);
+    font-weight: var(--htz-headline-md-weight);
+    line-height: var(--htz-headline-md-line-height);
+    color: var(--htz-on-surface);
+    margin-bottom: 8px;
+  }
+
+  .htz-card-body {
+    font-family: var(--htz-font-body);
+    font-size: var(--htz-body-md-size);
+    font-weight: var(--htz-body-md-weight);
+    line-height: var(--htz-body-md-line-height);
+    color: var(--htz-on-surface-variant);
+    margin-bottom: var(--htz-space-lg);
+    flex: 1;
+  }
+
+  .htz-card-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--htz-primary);
+    font-family: var(--htz-font-body);
+    font-size: var(--htz-label-md-size);
+    font-weight: var(--htz-label-md-weight);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: gap 200ms ease;
+
+    &:hover {
+      gap: 8px;
+    }
+  }
+}

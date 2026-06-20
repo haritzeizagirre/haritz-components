@@ -1,0 +1,122 @@
+:host {
+  display: inline-flex;
+}
+
+.htz-button__native {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--htz-font-body);
+  font-size: var(--htz-label-md-size);
+  font-weight: var(--htz-label-md-weight);
+  line-height: var(--htz-label-md-line-height);
+  letter-spacing: var(--htz-label-md-letter-spacing);
+  border-radius: var(--htz-radius-default);
+  transition: all 200ms ease;
+  outline: none;
+}
+
+// Sizes
+:host(.htz-button--size-sm) .htz-button__native {
+  padding: 6px 12px;
+  font-size: var(--htz-label-sm-size);
+}
+
+:host(.htz-button--size-md) .htz-button__native {
+  padding: 10px 20px;
+}
+
+:host(.htz-button--size-lg) .htz-button__native {
+  padding: 12px 24px;
+  font-size: var(--htz-body-md-size);
+}
+
+// Primary
+:host(.htz-button--primary) .htz-button__native {
+  background-color: var(--htz-primary);
+  color: var(--htz-on-primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// Secondary
+:host(.htz-button--secondary) .htz-button__native {
+  background: rgba(38, 38, 38, 0.5);
+  backdrop-filter: blur(4px);
+  border: 1.5px solid rgba(74, 124, 89, 0.5);
+  color: var(--htz-on-surface);
+
+  &:hover {
+    background-color: var(--htz-surface-container-high);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// Outline
+:host(.htz-button--outline) .htz-button__native {
+  background: transparent;
+  border: 1.5px solid var(--htz-outline-variant);
+  color: var(--htz-on-surface);
+
+  &:hover {
+    background-color: var(--htz-surface-container-high);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// Ghost
+:host(.htz-button--ghost) .htz-button__native {
+  background: transparent;
+  border: none;
+  color: var(--htz-primary);
+
+  &:hover {
+    background: rgba(45, 90, 59, 0.2);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// Icon
+:host(.htz-button--icon) .htz-button__native {
+  padding: 10px;
+  background-color: var(--htz-surface-container-highest);
+  color: var(--htz-on-surface);
+  border: none;
+
+  &:hover {
+    background-color: var(--htz-outline-variant);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// Disabled
+:host(.htz-button--disabled) {
+  opacity: 0.5;
+  pointer-events: none;
+
+  .htz-button__native {
+    cursor: not-allowed;
+  }
+}

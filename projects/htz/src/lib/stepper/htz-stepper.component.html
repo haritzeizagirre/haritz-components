@@ -1,0 +1,35 @@
+<div class="htz-stepper-container">
+  <div class="htz-stepper-header">
+    @for (step of steps(); track $index) {
+      <div class="htz-step-wrapper">
+        <div 
+          class="htz-step-header-item" 
+          [class.htz-active]="$index === selectedIndex()"
+          [class.htz-completed]="$index < selectedIndex()"
+          (click)="selectStep($index)"
+          role="button"
+          [attr.tabindex]="0"
+          (keydown.enter)="selectStep($index)"
+          (keydown.space)="selectStep($index)">
+          
+          <div class="htz-step-indicator">
+            @if ($index < selectedIndex()) {
+              <span class="material-symbols-outlined">check</span>
+            } @else {
+              <span>{{ $index + 1 }}</span>
+            }
+          </div>
+          <div class="htz-step-label">{{ step.label() }}</div>
+        </div>
+      </div>
+      
+      @if ($index < steps().length - 1) {
+        <div class="htz-step-separator" [class.htz-completed]="$index < selectedIndex()"></div>
+      }
+    }
+  </div>
+
+  <div class="htz-stepper-content">
+    <ng-content></ng-content>
+  </div>
+</div>

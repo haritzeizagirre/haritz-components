@@ -1,0 +1,30 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+}
+
+:host:not(:last-child)::after {
+  content: '/';
+  margin-left: var(--htz-space-sm);
+  color: var(--htz-outline);
+}
+
+.htz-breadcrumb-item {
+  color: var(--htz-on-surface-variant);
+  cursor: pointer;
+  transition: color 200ms ease;
+
+  &:hover {
+    color: var(--htz-on-surface);
+  }
+}
+
+.htz-breadcrumb-item--active {
+  color: var(--htz-primary);
+  font-weight: 600;
+  cursor: default;
+
+  &:hover {
+    color: var(--htz-primary);
+  }
+}

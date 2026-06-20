@@ -1,0 +1,11 @@
+<div class="panel-header" (click)="toggle()">
+  <span class="title">{{ title() }}</span>
+  <span class="material-symbols-outlined expand-icon" [class.rotated]="expanded()">
+    expand_more
+  </span>
+</div>
+@if (expanded()) {
+  <div class="panel-content">
+    <ng-content></ng-content>
+  </div>
+}

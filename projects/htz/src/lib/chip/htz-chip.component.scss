@@ -1,0 +1,75 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--htz-chip-padding, 0.25rem 0.75rem);
+  border-radius: var(--htz-chip-border-radius, 9999px);
+  font-size: var(--htz-chip-font-size, 0.875rem);
+  line-height: var(--htz-chip-line-height, 1.25rem);
+  font-weight: var(--htz-chip-font-weight, 500);
+  gap: var(--htz-chip-gap, 0.25rem);
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+
+  /* Variants */
+  &.primary {
+    background-color: var(--htz-color-primary, #007bff);
+    color: var(--htz-color-primary-contrast, #ffffff);
+    border: 1px solid transparent;
+  }
+
+  &.secondary {
+    background-color: var(--htz-color-secondary, #6c757d);
+    color: var(--htz-color-secondary-contrast, #ffffff);
+    border: 1px solid transparent;
+  }
+
+  &.outline {
+    background-color: transparent;
+    color: var(--htz-color-outline-text, #333333);
+    border: 1px solid var(--htz-color-outline-border, #cccccc);
+  }
+
+  &.success {
+    background-color: var(--htz-color-success, #28a745);
+    color: var(--htz-color-success-contrast, #ffffff);
+    border: 1px solid transparent;
+  }
+
+  &.warning {
+    background-color: var(--htz-color-warning, #ffc107);
+    color: var(--htz-color-warning-contrast, #212529);
+    border: 1px solid transparent;
+  }
+
+  &.error {
+    background-color: var(--htz-color-error, #dc3545);
+    color: var(--htz-color-error-contrast, #ffffff);
+    border: 1px solid transparent;
+  }
+
+  .htz-chip-remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 -0.25rem 0 0;
+    color: inherit;
+    cursor: pointer;
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover, &:focus {
+      opacity: 1;
+      outline: none;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .material-symbols-outlined {
+      font-size: var(--htz-chip-icon-size, 1.125rem);
+    }
+  }
+}

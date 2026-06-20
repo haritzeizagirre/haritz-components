@@ -1,0 +1,18 @@
+<div class="htz-input" [class.htz-input--focused]="focused()" [class.htz-input--error]="error()" [class.htz-input--disabled]="disabled()">
+  @if (label()) {
+    <label class="htz-input__label">{{ label() }}</label>
+  }
+  <input
+    class="htz-input__field"
+    [type]="type()"
+    [placeholder]="placeholder()"
+    [value]="value()"
+    [disabled]="disabled()"
+    (input)="onInput($event)"
+    (focus)="focused.set(true)"
+    (blur)="focused.set(false)"
+  />
+  @if (error()) {
+    <span class="htz-input__error">{{ error() }}</span>
+  }
+</div>

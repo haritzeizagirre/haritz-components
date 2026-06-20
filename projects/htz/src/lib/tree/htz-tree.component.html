@@ -1,0 +1,28 @@
+<ng-template #treeNodeTemplate let-nodes="nodes">
+  <ul class="htz-tree-list">
+    @for (node of nodes; track node.label) {
+      <li class="htz-tree-node">
+        <div class="htz-tree-node-content" (click)="toggleNode(node)">
+          @if (node.children && node.children.length > 0) {
+            <span class="material-symbols-outlined htz-tree-icon">
+              {{ node.expanded ? 'expand_more' : 'chevron_right' }}
+            </span>
+          } @else {
+            <span class="htz-tree-icon-placeholder"></span>
+          }
+          <span class="htz-tree-label">{{ node.label }}</span>
+        </div>
+        
+        @if (node.expanded && node.children && node.children.length > 0) {
+          <div class="htz-tree-children">
+            <ng-container *ngTemplateOutlet="treeNodeTemplate; context: { nodes: node.children }"></ng-container>
+          </div>
+        }
+      </li>
+    }
+  </ul>
+</ng-template>
+
+<div class="htz-tree">
+  <ng-container *ngTemplateOutlet="treeNodeTemplate; context: { nodes: nodes() }"></ng-container>
+</div>

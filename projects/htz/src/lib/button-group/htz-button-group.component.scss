@@ -1,0 +1,24 @@
+:host {
+  display: inline-block;
+}
+
+.htz-button-group {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+:host ::ng-deep htz-button {
+  &:not(:first-child) {
+    margin-left: -1px;
+  }
+  
+  &:not(:first-child) * {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  &:not(:last-child) * {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+}

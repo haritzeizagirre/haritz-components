@@ -1,0 +1,18 @@
+@if (visible()) {
+  <div class="htz-alert" [class]="'htz-alert--' + severity()" role="alert">
+    <span class="material-symbols-outlined htz-alert__icon">{{ iconName() }}</span>
+    <div class="htz-alert__content">
+      @if (title()) {
+        <strong class="htz-alert__title">{{ title() }}</strong>
+      }
+      <div class="htz-alert__message">
+        <ng-content></ng-content>
+      </div>
+    </div>
+    @if (dismissible()) {
+      <button class="htz-alert__close" (click)="dismiss()" aria-label="Close">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    }
+  </div>
+}

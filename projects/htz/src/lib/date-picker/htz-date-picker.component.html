@@ -1,0 +1,50 @@
+<div class="htz-date-picker-wrapper">
+  <div class="htz-input-container" (click)="togglePopup()">
+    <input 
+      type="text" 
+      readonly 
+      [value]="formattedDate()" 
+      placeholder="Select date"
+      class="htz-input"
+    />
+    <span class="material-symbols-outlined htz-calendar-icon">calendar_today</span>
+  </div>
+
+  @if (isOpen()) {
+    <div class="htz-popup" (click)="$event.stopPropagation()">
+      <div class="htz-calendar-header">
+        <button class="htz-nav-btn" type="button" (click)="previousMonth($event)">
+          <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <div class="htz-current-month">
+          {{ currentMonth() | date:'MMMM yyyy' }}
+        </div>
+        <button class="htz-nav-btn" type="button" (click)="nextMonth($event)">
+          <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+      </div>
+
+      <div class="htz-calendar-body">
+        <div class="htz-weekdays">
+          @for (day of weekDays; track day) {
+            <div class="htz-weekday">{{ day }}</div>
+          }
+        </div>
+        <div class="htz-days-grid">
+          @for (day of calendarGrid(); track day.date.getTime()) {
+            <button 
+              type="button"
+              class="htz-day"
+              [class.htz-other-month]="!day.isCurrentMonth"
+              [class.htz-today]="day.isToday"
+              [class.htz-selected]="day.isSelected"
+              (click)="selectDate(day, $event)"
+            >
+              {{ day.date.getDate() }}
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</div>

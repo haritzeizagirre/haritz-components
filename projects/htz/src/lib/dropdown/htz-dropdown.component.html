@@ -1,0 +1,11 @@
+<div class="htz-dropdown">
+  <div class="htz-dropdown__trigger" (click)="toggle()">
+    <ng-content select="[htzDropdownTrigger]"></ng-content>
+  </div>
+  
+  @if (isOpen()) {
+    <div class="htz-dropdown__menu" (click)="close()">
+      <ng-content select="[htzDropdownMenu]"></ng-content>
+    </div>
+  }
+</div>

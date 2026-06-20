@@ -1,0 +1,8 @@
+@if (hasMedia()) {
+  <div class="htz-card__media">
+    <ng-content select="[htz-card-media]"></ng-content>
+  </div>
+}
+<div class="htz-card__body">
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,15 @@
+<header class="htz-topnav">
+  <div class="htz-topnav__inner">
+    <div class="htz-topnav__left">
+      @if (title()) {
+        <span class="htz-topnav__title">{{ title() }}</span>
+      }
+      <nav class="htz-topnav__nav">
+        <ng-content select="[htz-topnav-link]"></ng-content>
+      </nav>
+    </div>
+    <div class="htz-topnav__actions">
+      <ng-content select="[htz-topnav-actions]"></ng-content>
+    </div>
+  </div>
+</header>

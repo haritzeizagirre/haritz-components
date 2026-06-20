@@ -1,0 +1,31 @@
+<div class="htz-calendar">
+  <div class="htz-calendar__header">
+    <button class="htz-calendar__nav" (click)="prevMonth()">
+      <span class="material-symbols-outlined">chevron_left</span>
+    </button>
+    <div class="htz-calendar__title">{{ monthName() }}</div>
+    <button class="htz-calendar__nav" (click)="nextMonth()">
+      <span class="material-symbols-outlined">chevron_right</span>
+    </button>
+  </div>
+  
+  <div class="htz-calendar__grid">
+    @for (day of weekdays; track day) {
+      <div class="htz-calendar__weekday">{{ day }}</div>
+    }
+    
+    @for (date of days(); track $index) {
+      @if (date) {
+        <button 
+          class="htz-calendar__day"
+          [class.htz-calendar__day--selected]="isSelected(date)"
+          [class.htz-calendar__day--today]="isToday(date)"
+          (click)="selectDate(date)">
+          {{ date.getDate() }}
+        </button>
+      } @else {
+        <div class="htz-calendar__day htz-calendar__day--empty"></div>
+      }
+    }
+  </div>
+</div>

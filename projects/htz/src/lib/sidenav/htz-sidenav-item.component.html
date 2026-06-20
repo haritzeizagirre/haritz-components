@@ -1,0 +1,7 @@
+<a class="htz-sidenav-item" [class.htz-sidenav-item--active]="active()">
+  @if (icon()) {
+    <span class="material-symbols-outlined htz-sidenav-item__icon"
+          [style.font-variation-settings]="active() ? '\'FILL\' 1' : ''">{{ icon() }}</span>
+  }
+  <span class="htz-sidenav-item__label">{{ label() }}</span>
+</a>

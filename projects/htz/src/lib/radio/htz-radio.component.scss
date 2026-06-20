@@ -1,0 +1,72 @@
+:host {
+  display: inline-block;
+}
+
+.htz-radio-wrapper {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.htz-radio-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.htz-radio-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: inherit;
+  margin: 0;
+  z-index: 1;
+}
+
+.htz-radio-visual {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--htz-border-color, #ccc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+
+  .htz-radio-input:checked + & {
+    border-color: var(--htz-primary, #007bff);
+  }
+
+  .htz-radio-input:focus-visible + & {
+    box-shadow: 0 0 0 3px var(--htz-focus-ring, rgba(0, 123, 255, 0.3));
+  }
+}
+
+.htz-radio-inner-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--htz-primary, #007bff);
+  transform: scale(0);
+  transition: transform 0.2s ease;
+
+  .htz-radio-input:checked + .htz-radio-visual & {
+    transform: scale(1);
+  }
+}
+
+.htz-radio-content {
+  color: var(--htz-text-color, inherit);
+  font-family: var(--htz-font-family, inherit);
+}

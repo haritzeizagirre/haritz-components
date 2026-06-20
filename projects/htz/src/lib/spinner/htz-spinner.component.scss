@@ -1,0 +1,57 @@
+:host {
+  display: inline-flex;
+}
+
+.htz-spinner {
+  display: inline-flex;
+}
+
+.htz-spinner--sm {
+  width: 20px;
+  height: 20px;
+}
+
+.htz-spinner--md {
+  width: 32px;
+  height: 32px;
+}
+
+.htz-spinner--lg {
+  width: 48px;
+  height: 48px;
+}
+
+.htz-spinner__svg {
+  animation: htz-spin 1s linear infinite;
+  width: 100%;
+  height: 100%;
+}
+
+.htz-spinner__circle {
+  stroke: var(--htz-primary);
+  stroke-linecap: round;
+  stroke-dasharray: 120;
+  stroke-dashoffset: 90;
+  animation: htz-dash 1.5s ease-in-out infinite;
+}
+
+@keyframes htz-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes htz-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}

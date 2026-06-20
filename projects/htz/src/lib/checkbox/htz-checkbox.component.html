@@ -1,0 +1,17 @@
+<label class="htz-checkbox" [class.htz-checkbox--checked]="checked()" [class.htz-checkbox--indeterminate]="indeterminate()" [class.htz-checkbox--disabled]="disabled()">
+  <button
+    role="checkbox"
+    class="htz-checkbox__box"
+    [attr.aria-checked]="indeterminate() ? 'mixed' : checked()"
+    [disabled]="disabled()"
+    (click)="toggle()">
+    @if (checked()) {
+      <span class="material-symbols-outlined htz-checkbox__icon">check</span>
+    } @else if (indeterminate()) {
+      <span class="material-symbols-outlined htz-checkbox__icon">remove</span>
+    }
+  </button>
+  @if (label()) {
+    <span class="htz-checkbox__label">{{ label() }}</span>
+  }
+</label>

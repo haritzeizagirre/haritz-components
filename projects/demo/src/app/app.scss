@@ -1,0 +1,45 @@
+.main-content {
+  padding-top: 80px; /* Offset for TopNav */
+  padding-left: 256px; /* Offset for SideNav */
+  min-height: 100vh;
+  padding-bottom: 64px;
+}
+
+.content-header {
+  padding: var(--htz-space-xl) var(--htz-space-xl) var(--htz-space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-family: var(--htz-font-headline);
+  font-size: var(--htz-headline-lg-size);
+  color: var(--htz-on-surface);
+  margin: var(--htz-space-md) 0 var(--htz-space-xs);
+  letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+  font-family: var(--htz-font-body);
+  font-size: var(--htz-body-lg-size);
+  color: var(--htz-on-surface-variant);
+  margin-bottom: 0;
+}
+
+htz-tabs {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--htz-space-xl);
+}
+
+.section-title {
+  font-family: var(--htz-font-headline);
+  font-size: var(--htz-headline-sm-size);
+  color: var(--htz-on-surface);
+  margin-bottom: var(--htz-space-md);
+  font-weight: 500;
+}
+
+.demo-section {
+  margin-bottom: var(--htz-space-xl);
+}

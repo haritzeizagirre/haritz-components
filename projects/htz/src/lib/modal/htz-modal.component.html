@@ -1,0 +1,16 @@
+@if (isOpen()) {
+  <div class="htz-modal-backdrop" (click)="close()"></div>
+  <div class="htz-modal-dialog">
+    <div class="htz-modal-header">
+      @if (title()) {
+        <h2 class="htz-modal-title">{{ title() }}</h2>
+      }
+      <button class="htz-modal-close" (click)="close()" aria-label="Close">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="htz-modal-content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+}

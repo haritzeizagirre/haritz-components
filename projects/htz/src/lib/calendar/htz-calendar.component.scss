@@ -1,0 +1,95 @@
+:host {
+  display: inline-block;
+}
+
+.htz-calendar {
+  width: 320px;
+  background: var(--htz-surface-container);
+  border: 1px solid rgba(82, 82, 82, 0.5);
+  border-radius: var(--htz-radius-xl);
+  padding: var(--htz-space-md);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.htz-calendar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--htz-space-md);
+}
+
+.htz-calendar__title {
+  font-family: var(--htz-font-headline);
+  font-size: var(--htz-body-lg-size);
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--htz-on-surface);
+}
+
+.htz-calendar__nav {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--htz-on-surface-variant);
+  padding: 4px;
+  border-radius: var(--htz-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 200ms ease;
+
+  &:hover {
+    background-color: var(--htz-surface-container-high);
+    color: var(--htz-on-surface);
+  }
+}
+
+.htz-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.htz-calendar__weekday {
+  text-align: center;
+  font-family: var(--htz-font-body);
+  font-size: var(--htz-label-sm-size);
+  color: var(--htz-on-surface-variant);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.htz-calendar__day {
+  aspect-ratio: 1;
+  border-radius: var(--htz-radius-full);
+  border: none;
+  background: transparent;
+  color: var(--htz-on-surface);
+  font-family: var(--htz-font-body);
+  font-size: var(--htz-body-md-size);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease;
+
+  &:hover:not(.htz-calendar__day--empty):not(.htz-calendar__day--selected) {
+    background-color: var(--htz-surface-container-high);
+  }
+}
+
+.htz-calendar__day--empty {
+  cursor: default;
+}
+
+.htz-calendar__day--today {
+  border: 1.5px solid var(--htz-primary);
+  font-weight: 600;
+}
+
+.htz-calendar__day--selected {
+  background-color: var(--htz-primary);
+  color: var(--htz-on-primary);
+  font-weight: 600;
+  border: none;
+}

@@ -1,0 +1,15 @@
+<div 
+  class="htz-file-upload-zone"
+  [class.drag-over]="isDragOver()"
+  (click)="onClick()"
+>
+  <span class="material-symbols-outlined upload-icon">cloud_upload</span>
+  <p class="upload-text">Click or drag file here</p>
+  
+  <input 
+    type="file" 
+    #fileInput 
+    class="hidden-input" 
+    (change)="onFileChange($event)"
+  />
+</div>

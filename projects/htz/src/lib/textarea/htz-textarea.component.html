@@ -1,0 +1,17 @@
+<div class="htz-textarea" [class.htz-textarea--focused]="focused()" [class.htz-textarea--error]="error()" [class.htz-textarea--disabled]="disabled()">
+  @if (label()) {
+    <label class="htz-textarea__label">{{ label() }}</label>
+  }
+  <textarea
+    class="htz-textarea__field"
+    [rows]="rows()"
+    [placeholder]="placeholder()"
+    [disabled]="disabled()"
+    (input)="onInput($event)"
+    (focus)="focused.set(true)"
+    (blur)="focused.set(false)"
+  >{{ value() }}</textarea>
+  @if (error()) {
+    <span class="htz-textarea__error">{{ error() }}</span>
+  }
+</div>

@@ -1,0 +1,88 @@
+:host {
+  display: block;
+  font-family: var(--htz-font-family, inherit);
+  --htz-time-picker-primary: var(--htz-primary, #4caf50); // Green primary
+  --htz-time-picker-text: var(--htz-text-color, #ffffff);
+  --htz-time-picker-bg: var(--htz-bg, rgba(255, 255, 255, 0.1));
+  --htz-time-picker-border: var(--htz-border-color, rgba(255, 255, 255, 0.2));
+  --htz-time-picker-hover: var(--htz-hover-bg, rgba(255, 255, 255, 0.15));
+  --htz-time-picker-radius: var(--htz-border-radius, 8px);
+}
+
+.htz-time-picker-container {
+  position: relative;
+  width: max-content;
+}
+
+.htz-time-picker-input {
+  width: 100px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  color: var(--htz-time-picker-text);
+  background: var(--htz-time-picker-bg);
+  border: 1px solid var(--htz-time-picker-border);
+  border-radius: var(--htz-time-picker-radius);
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    border-color: var(--htz-time-picker-primary);
+  }
+}
+
+.htz-time-picker-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  display: flex;
+  align-items: stretch;
+  height: 200px;
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--htz-time-picker-border);
+  border-radius: var(--htz-time-picker-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 1000;
+  color: var(--htz-time-picker-text);
+}
+
+.htz-time-picker-column {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none; // Firefox
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari
+  }
+}
+
+.htz-time-picker-item {
+  padding: 8px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background: var(--htz-time-picker-hover);
+  }
+
+  &.selected {
+    background: var(--htz-time-picker-primary);
+    color: #fff;
+    font-weight: bold;
+  }
+}
+
+.htz-time-picker-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  font-weight: bold;
+  opacity: 0.5;
+  background: rgba(0, 0, 0, 0.1);
+}

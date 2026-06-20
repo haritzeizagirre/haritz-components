@@ -1,0 +1,19 @@
+<label class="htz-radio-wrapper" [class.disabled]="disabled()">
+  <div class="htz-radio-container">
+    <input
+      type="radio"
+      class="htz-radio-input"
+      [name]="name()"
+      [value]="value()"
+      [checked]="checked"
+      [disabled]="disabled()"
+      (change)="onChange($event)"
+    />
+    <div class="htz-radio-visual">
+      <div class="htz-radio-inner-circle"></div>
+    </div>
+  </div>
+  <div class="htz-radio-content">
+    <ng-content></ng-content>
+  </div>
+</label>

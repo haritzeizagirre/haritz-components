@@ -1,0 +1,16 @@
+<div class="htz-toast-container">
+  @for (toast of toastService.toasts(); track toast.id) {
+    <div class="htz-toast" [class]="'htz-toast--' + (toast.config.severity || 'info')">
+      <span class="material-symbols-outlined htz-toast__icon">{{ getIcon(toast.config.severity || 'info') }}</span>
+      <div class="htz-toast__content">
+        @if (toast.config.title) {
+          <strong class="htz-toast__title">{{ toast.config.title }}</strong>
+        }
+        <span class="htz-toast__message">{{ toast.config.message }}</span>
+      </div>
+      <button class="htz-toast__close" (click)="toastService.dismiss(toast.id)">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+  }
+</div>

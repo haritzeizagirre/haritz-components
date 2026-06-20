@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+
+.htz-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--htz-space-sm);
+  font-family: var(--htz-font-body);
+  font-size: var(--htz-label-md-size);
+  flex-wrap: wrap;
+}

@@ -1,0 +1,56 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--htz-space-sm);
+  padding: var(--htz-space-md);
+  height: 100vh;
+  width: 256px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: 80px;
+  border-right: 1px solid rgba(82, 82, 82, 0.3);
+  background-color: var(--htz-surface);
+  z-index: 40;
+  overflow-y: auto;
+}
+
+.htz-sidenav__header {
+  margin-bottom: var(--htz-space-xl);
+  padding: 0 var(--htz-space-sm);
+}
+
+.htz-sidenav__title {
+  font-family: var(--htz-font-headline);
+  font-size: var(--htz-headline-md-size);
+  font-weight: 600;
+  color: var(--htz-primary);
+  letter-spacing: -0.01em;
+}
+
+.htz-sidenav__version {
+  display: block;
+  font-family: var(--htz-font-body);
+  font-size: var(--htz-label-sm-size);
+  font-weight: 500;
+  color: var(--htz-on-surface-variant);
+  margin-top: var(--htz-space-xs);
+}
+
+.htz-sidenav__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.htz-sidenav__footer {
+  margin-top: auto;
+  padding-top: var(--htz-space-md);
+  border-top: 1px solid rgba(82, 82, 82, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

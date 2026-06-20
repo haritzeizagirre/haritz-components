@@ -1,0 +1,48 @@
+htz-table {
+  display: block;
+}
+
+.htz-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--htz-radius-default);
+  border: 1px solid var(--htz-outline-variant);
+  background: var(--htz-glass-bg);
+  backdrop-filter: blur(12px);
+}
+
+.htz-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--htz-font-body);
+  font-size: var(--htz-label-md-size);
+
+  th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--htz-on-surface-variant);
+    background-color: var(--htz-surface-container);
+    border-bottom: 1px solid var(--htz-outline-variant);
+    font-size: var(--htz-label-sm-size);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  td {
+    padding: 12px 16px;
+    color: var(--htz-on-surface);
+    border-bottom: 1px solid rgba(82, 82, 82, 0.3);
+  }
+}
+
+.htz-table--striped tbody tr:nth-child(even) {
+  background: rgba(38, 38, 38, 0.5);
+}
+
+.htz-table--hoverable tbody tr {
+  transition: background-color 200ms ease;
+
+  &:hover {
+    background-color: var(--htz-surface-container-high);
+  }
+}
